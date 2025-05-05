@@ -11,11 +11,13 @@ import {
     Switch,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import MobileDrawer from './MobileDrawer'; 
+import MobileDrawer from './MobileDrawer';
+import { useContext } from 'react';
+import { AppContext } from '../contexts/AppContext'; 
 
 export default function Navbar() {
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
+    const { mode, toggleColorMode } = useContext(AppContext);
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -50,8 +52,8 @@ export default function Navbar() {
                                 </Button>
                             ))}
                             <Switch
-                                checked={darkMode}
-                                onChange={() => setDarkMode((prev) => !prev)}
+                                checked={mode === 'dark'}
+                                onChange={toggleColorMode}
                             />
                         </Box>
                     )}
@@ -62,8 +64,8 @@ export default function Navbar() {
                 open={drawerOpen}
                 onClose={toggleDrawer(false)}
                 navItems={navItems}
-                darkMode={darkMode}
-                setDarkMode={setDarkMode}
+                mode={mode}
+                toggleColorMode={toggleColorMode}
             />
         </>
     );

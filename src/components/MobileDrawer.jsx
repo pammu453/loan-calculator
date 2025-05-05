@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 
 
-const MobileDrawer = ({ open, onClose, navItems, darkMode, setDarkMode }) => {
+const MobileDrawer = ({ open, onClose, navItems, mode, toggleColorMode }) => {
     const drawerContent = (
         <Box
             sx={{ width: 250 }}
@@ -28,8 +28,8 @@ const MobileDrawer = ({ open, onClose, navItems, darkMode, setDarkMode }) => {
                 ))}
                 <ListItem>
                     <Switch
-                        checked={darkMode}
-                        onChange={() => setDarkMode((prev) => !prev)}
+                        checked={mode === 'dark'}
+                        onChange={() => toggleColorMode((prev) => !prev)}
                     />
                 </ListItem>
             </List>
