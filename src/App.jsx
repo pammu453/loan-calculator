@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
     <>
-      <h1>Welcome to Loan Calculator</h1>
+      <Navbar />
     </>
   )
 }
