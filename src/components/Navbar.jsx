@@ -13,16 +13,23 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import MobileDrawer from './MobileDrawer';
 import { useContext } from 'react';
-import { AppContext } from '../contexts/AppContext'; 
+import { AppContext } from '../contexts/AppContext';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { mode, toggleColorMode } = useContext(AppContext);
+    const location = useLocation();
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-    const navItems = ['Home', 'Exchange Rates (Live)', 'About', 'Error Page'];
+    const navItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Exchange Rates (Live)', path: '/exchange-rates' },
+        { label: 'About', path: '/about' },
+        { label: 'Error Page', path: '/error-page' },
+    ];
 
     const toggleDrawer = (open) => () => {
         setDrawerOpen(open);
@@ -46,11 +53,19 @@ export default function Navbar() {
                         </IconButton>
                     ) : (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                            {navItems.map((item) => (
-                                <Button key={item} color="inherit">
-                                    {item}
-                                </Button>
-                            ))}
+                            {navItems.map((item) => {
+                                const isActive = location.pathname === item.path;
+                                return (
+                                    <Button
+                                        key={item.label}
+                                        color={isActive ? 'primary' : 'inherit'}
+                                        variant={isActive ? 'contained' : 'text'} 
+                                        component={Link}
+                                        to={item.path}
+                                    >
+                                        {item.label}
+                                    </Button>)
+                            })}
                             <Switch
                                 checked={mode === 'dark'}
                                 onChange={toggleColorMode}

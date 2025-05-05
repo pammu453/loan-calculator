@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.jsx'
 import AppProvider from './contexts/AppContext.jsx'
 import CssBaseline from '@mui/material/CssBaseline';
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AppProvider>
-      <App />
-      <CssBaseline />
-    </AppProvider>
+    <BrowserRouter>
+      <AppProvider>
+        <App />
+        <CssBaseline />
+      </AppProvider>
+    </BrowserRouter>
   </StrictMode>,
 )

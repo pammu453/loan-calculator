@@ -8,6 +8,7 @@ import {
     ListItemText,
     Switch,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 const MobileDrawer = ({ open, onClose, navItems, mode, toggleColorMode }) => {
@@ -19,10 +20,10 @@ const MobileDrawer = ({ open, onClose, navItems, mode, toggleColorMode }) => {
             onKeyDown={onClose}
         >
             <List>
-                {navItems.map((text) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemText primary={text} />
+                {navItems.map((item) => (
+                    <ListItem key={item.label} disablePadding>
+                        <ListItemButton component={Link} to={item.path}>
+                            <ListItemText primary={item.label} />
                         </ListItemButton>
                     </ListItem>
                 ))}
