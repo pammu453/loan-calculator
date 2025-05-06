@@ -59,7 +59,7 @@ export default function Navbar() {
                                     <Button
                                         key={item.label}
                                         color={isActive ? 'primary' : 'inherit'}
-                                        variant={isActive ? 'contained' : 'text'} 
+                                        variant={isActive ? 'contained' : 'text'}
                                         component={Link}
                                         to={item.path}
                                     >

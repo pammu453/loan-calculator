@@ -26,7 +26,7 @@ const LoanForm = ({ loanAmount, interestRate, termYears, setLoanAmount, setInter
                 fullWidth
             />
         </Box>
-        <Button variant="contained" onClick={onSubmit} sx={{marginY:2}}>
+        <Button variant="contained" onClick={onSubmit} sx={{ marginY: 2 }}>
             Calculate
         </Button>
     </>
