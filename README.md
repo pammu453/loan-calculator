@@ -1,12 +1,49 @@
-# React + Vite
+# 💰 Loan Calculator App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Demo](https://loan-calculator-nwxh.onrender.com)
 
-Currently, two official plugins are available:
+A modern, single-page Loan Calculator built with **React** and **Material UI**. This app helps users calculate loan EMIs (Equated Monthly Installments), view detailed amortization schedules, and check real-time currency conversions of their EMIs using live exchange rates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📈 **Loan EMI Calculation** using standard financial formulas
+- 📊 **Dynamic Amortization Schedule** with monthly breakdown
+- 🌐 **Real-Time Currency Conversion** via [ExchangeRate-API](https://www.exchangerate-api.com/)
+- 🌍 **Paginated Table** for 160+ currencies
+- 🌓 **Dark/Light Mode** toggle
+- 📱 **Mobile-Responsive Design** with collapsible header navigation
+- 💅 Built entirely with **Material UI**
+
+---
+
+## 🧮 EMI Formula
+
+\[
+\text{EMI} = \frac{P \times R \times (1+R)^N}{(1+R)^N - 1}
+\]
+
+Where:
+- `P` = Principal loan amount  
+- `R` = Monthly interest rate = annual rate / 12 / 100  
+- `N` = Loan duration in months
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ React (Hooks, Context API, Routing)
+- 💄 Material UI (MUI) for design
+- 🔗 Axios for API requests
+- 🔢 ExchangeRate-API for live exchange rate data
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/yourusername/loan-calculator-app.git
+cd loan-calculator-app
+npm install
+npm run dev
