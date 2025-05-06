@@ -88,12 +88,12 @@ const AboutPage = () => {
                     <strong>EMI = [P x R x (1+R)^N] / [(1+R)^N - 1]</strong>
                     <br />
                     Where:
-                    <ul style={{ textAlign: 'left', paddingLeft: 24 }}>
-                        <li>P = Principal loan amount</li>
-                        <li>R = Monthly interest rate (annual rate / 12 / 100)</li>
-                        <li>N = Loan duration in months</li>
-                    </ul>
                 </Typography>
+                <ul style={{ textAlign: 'left', paddingLeft: 24 }}>
+                    <li>P = Principal loan amount</li>
+                    <li>R = Monthly interest rate (annual rate / 12 / 100)</li>
+                    <li>N = Loan duration in months</li>
+                </ul>
 
                 <Divider sx={{ my: 3 }} />
 
@@ -134,7 +134,7 @@ const AboutPage = () => {
                 <Divider sx={{ my: 3 }} />
 
                 <Grid container justifyContent="space-between" alignItems="center" sx={{ marginTop: 4 }}>
-                    <Grid item>
+                    <Grid>
                         <Typography variant="body2" color="text.secondary">
                             &copy; {new Date().getFullYear()} Loan Calculator App. All rights reserved.
                         </Typography>
